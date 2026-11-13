@@ -23,3 +23,11 @@
     });
   });
 })();
+
+// Publication counts: fill every [data-count] with the number of entries its selector matches,
+// so adding a paper never requires editing a number by hand
+(function () {
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    el.textContent = document.querySelectorAll(el.getAttribute('data-count')).length;
+  });
+})();
